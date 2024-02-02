@@ -1,0 +1,44 @@
+/* Kavoon 글꼴을 가져오는 코드 */
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+.App-header {
+  background-color: #1B1B1B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.highlighted-text {
+  color: #FE6F61; /* 변경하고자 하는 색상을 지정합니다. */
+}
+
+.Button{
+  width : 500px;
+  height : 80px;
+  border-radius : 15px;
+  font-size : 40px;
+  text-Align : center;
+  background-color : #FE6F61;
+  color : white;
+  font-family: 'Kavoon', cursive;
+  Justify-contetn : center;
+}
+
+
+.Title{
+  text-Align : center;
+  font-size : 70px;
+  font-family: 'Kavoon', cursive;
+  margin-bottom : 30px;
+}
+
+.Text{
+  text-Align : center;
+  font-size : 25px;
+  font-family: 'LINE Seed Sans KR', Bold;
+  margin-bottom : 300px;
+}
