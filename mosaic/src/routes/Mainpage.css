@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+.background {
+    background-color: #1B1B1B;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.Navbar {
+    background-color : black;
+    Justify-content : center;
+    text-align : center;
+    height : 87px;
+}
+
+.highlighted-text {
+color: #FE6F61; /* 변경하고자 하는 색상을 지정합니다. */
+}
+
+.NavTitle{
+text-Align : center;
+color : white;
+font-size : 50px;
+font-family: 'Kavoon', cursive;
+margin-bottom : -30px;
+margin-top : -25px;
+Justify-content : center;
+}
+
+.invertButton{
+    background-color : #FE6F61;
+    color : white;
+    font-size : 25px;
+    width : 136px;
+    height : 48px;
+    border-radius : 20px;
+    text-align : center;
+    font-family: 'Kavoon', cursive;
+    margin-right : 9px;
+    Justify-content : center;
+    padding-top : 5px;
+}
+
+.loginButton{
+    background-color : #2A2A2A;
+    color : white;
+    font-size : 25px;
+    width : 136px;
+    height : 48px;
+    border-radius : 20px;
+    text-align : center;
+    font-family : 'Kavoon', cursive;
+    margin-left : 9px;
+    Justify-content : center;
+    padding-top : 5px;
+}
+
+/* invertButton hover 효과 */
+.invertButton:hover {
+    background-color: #FF867B; /* 마우스를 올렸을 때 배경색 변경 */
+    color: black; /* 텍스트 색상 변경 */
+}
+
+/* loginButton hover 효과 */
+.loginButton:hover {
+    background-color: #555; /* 마우스를 올렸을 때 배경색 변경 */
+    color: black; /* 텍스트 색상 변경 */
+}
+
+.upload-box{
+    width: 715px;
+    height: 491px;
+    background-color : #1B1B1B;
+    margin: auto;
+    border-radius: 10px;
+    border: 5px dashed #696969;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}  
+
+.drag-file{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.upload-text{
+    text-Align : center;
+    font-size : 25px;
+    font-family: 'LINE Seed Sans KR', Bold;
+    font-weight : bold;
+    line-height : 15px;
+    margin : 20px 0 10px;
+    color : white;
+}
+
+.sub-text{
+    text-Align : center;
+    font-size : 25px;
+    font-family: 'LINE Seed Sans KR', Thin;
+    font-weight : 300;
+    line-height : 15px;
+    margin-top : 10px;
+    color : white;
+}
+
+.upload-image{
+    width : 126px;
+    text-align : center;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
+.file {
+    display: none;
+}
+
+.file::file-selector-button {
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #111;
+    border-radius: 12px;
+    padding: 4px 32px;
+    cursor: pointer;
+}
+
+.preview {
+    width: 300px;
+    height: 150px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 3px dashed #eee;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.preview:hover {
+    border-color: #111;
+}
