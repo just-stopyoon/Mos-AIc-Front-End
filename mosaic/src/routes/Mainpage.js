@@ -1,36 +1,15 @@
 import React from "react";
-import { Link, Switch, Route, Router } from 'react-router-dom';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link, Route, Router } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
 import './Mainpage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import uploadImage from '../image/uploadImage.png';
-import Mainpage from './Mainpage.js';
-import Login from './Login.js';
+import Navigation from '../components/Navigation';
 
 const Mainpage = () => {
     return (
     <div>
-        <Navbar className="Navbar">
-        <Container>
-            <Navbar.Brand href="#home">
-                <p className="NavTitle">
-                    Mos-<span className="highlighted-text">AI</span>c
-                </p>
-            </Navbar.Brand>
-            <Nav>
-                <Link to = "/invert" style = {{ textDecoration : "none"}} className="invertButton" >
-                    Invert
-                </Link>
-                <Link to = "/login" style = {{ textDecoration : "none" }} className="loginButton">
-                    Login
-                </Link>
-            </Nav>
-        </Container>
-        </Navbar>
-        <Switch>
-            <Route path = "/login" element = {<Login/>}/>
-            <Route path = "/" element = {<Mainpage/>}/>
-        </Switch>
+        <Navigation/>
         <Background />
     </div>
     );

@@ -1,10 +1,13 @@
 // App.js
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route, Link, Switch } from "react-router-dom";
+import { Routes, Route, Link, } from "react-router-dom";
 import './App.css';
-import Mainpage from './routes/Mainpage.js';
-import Login from './routes/Login.js';
+import Login from "./routes/Login.js";
+import Mainpage from "./routes/Mainpage.js";
+import Invertpage from "./routes/Invertpage.js";
+import Account from "./routes/Account.js";
+
 
 function App() {
   return (
@@ -35,27 +38,13 @@ function App() {
             </div>
           }
         />
-        <Switch>
-          <Route path="/main" element={<Mainpage/>} />
-          <Route path="/login" element={<Login/>} />
-        </Switch>
+        <Route path="/main" element={<Mainpage/>} />
+        <Route path="/login" element = {<Login/>}/>
+        <Route path ="/invert" element = {<Invertpage/>}/>
+        <Route path ="/account" element = {<Account/>}/>
       </Routes>
     </div>
   );
-}
-
-class App extends React.Component{
-  render(){
-    return (
-      <div>
-        <Switch>
-          <Route path="/main" element={<Mainpage/>} />
-          <Route path="/login" element={<Login/>} />
-        </Switch>
-        <Nav/>
-      </div>
-    )
-  }
 }
 
 export default App;
