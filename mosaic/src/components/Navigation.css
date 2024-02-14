@@ -21,3 +21,22 @@
     margin-top: -5px;
     margin-left : -50px;
 }
+
+.invertButton{
+    background-color : #FE6F61;
+    color : white;
+    font-size : 25px;
+    width : 136px;
+    height : 48px;
+    border-radius : 20px;
+    text-align : center;
+    font-family: 'Kavoon', cursive;
+    margin-right : 9px;
+    Justify-content : center;
+    padding-top : 5px;
+}
+
+.invertButton:hover {
+    background-color: #FF867B; /* 마우스를 올렸을 때 배경색 변경 */
+    color: black; /* 텍스트 색상 변경 */
+}

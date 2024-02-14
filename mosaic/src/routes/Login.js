@@ -8,7 +8,6 @@ import './Login.css';
 function Login() {
   return (
     <div>
-        <Navigation/>
         <Background/>
     </div>
   )
@@ -24,11 +23,12 @@ const LoginBox = () => {
   return (
     <div>
       <div className = "rectangle">
-        <p className = "login-title">
-          로그인 하기
+        <p className="Title-text">
+          Mos-<span className="highlighted-text">AI</span>c
+          {/* <span className = "login-title">로그인 하기</span> */}
         </p>
         <p className = "login-text">
-          'mos-AIc'가 처음이라면?
+          사이트 이용이 처음이라면?
         <Link to="/account" style={{ textDecoration: "none" }} className="account-Button">
           회원가입
         </Link>

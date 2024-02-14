@@ -2,7 +2,7 @@ import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Navigation from "./Navigation.js";
 import Login from "../routes/Login.js";
 import Mainpage from "../routes/Mainpage.js"
-import Invertpage from "../routes/Invertpage.js"
+import Mypage from "../routes/Mypage.js"
 
 import React, {useState, useEffect } from "react";
 
@@ -12,8 +12,9 @@ function AppRouter(props){
             <Routes>
                 <Route path = "/" element = {<Mainpage/>}/>
                 <Rotue path = "/main" element = {<Mainpage/>}/>
+                <Route path = "/account" element = {<Account/>}/>
                 <Route path = "/login" element = {<Login/>}/>
-                <Rotue path = "/invert" element = {<Invertpage/>}/>
+                <Rotue path = "/mypage" element = {<Mypage/>}/>
             </Routes>
         </div>
     )

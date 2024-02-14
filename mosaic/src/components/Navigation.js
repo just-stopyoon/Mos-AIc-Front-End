@@ -5,6 +5,7 @@ import './Navigation.css';
 
 const Navigation = () => {
     const navigation = useNavigate();
+    const onClickInvert = () => alert("변환 될 예정")
     return(
         <div>
             <Navbar className="Navbar">
@@ -15,11 +16,11 @@ const Navigation = () => {
                         </p>
                     </Navbar.Brand>
                     <Nav>
-                        <Nav.Link href = "/invert" style = {{ textDecoration : "none"}} className="invertButton" >
+                        <button className = "invertButton" onClick = {onClickInvert}>
                             Invert
-                        </Nav.Link>
-                        <Nav.Link href = "/login" style = {{ textDecoration : "none" }} className="loginButton">
-                            Login
+                        </button>
+                        <Nav.Link href = "/mypage" style = {{ textDecoration : "none" }} className="loginButton">
+                            My page
                         </Nav.Link>
                     </Nav>
                 </Container>

@@ -5,8 +5,9 @@ import { Routes, Route, Link, } from "react-router-dom";
 import './App.css';
 import Login from "./routes/Login.js";
 import Mainpage from "./routes/Mainpage.js";
-import Invertpage from "./routes/Invertpage.js";
 import Account from "./routes/Account.js";
+import Mypage from "./routes/Mypage.js";
+
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
                   <br/>
                   <br/>만든이 : 김휘선(AI) 민재준(Back-end) 정지윤(Front-end)
                 </p>
-                <Link to="/main" style={{ textDecoration: "none" }} className="Button">
+                <Link to="/login" style={{ textDecoration: "none" }} className="Button">
                   start
                 </Link>
               </div>
@@ -40,7 +41,7 @@ function App() {
         />
         <Route path="/main" element={<Mainpage/>} />
         <Route path="/login" element = {<Login/>}/>
-        <Route path ="/invert" element = {<Invertpage/>}/>
+        <Route path="/mypage" element = {<Mypage/>}/>
         <Route path ="/account" element = {<Account/>}/>
       </Routes>
     </div>
