@@ -13,7 +13,7 @@ function Account() {
 };
 
 const Background = () => (
-    <div className = "background">
+    <div className = "A-background">
     <MakeAccount/>
 </div>
 )
@@ -21,19 +21,20 @@ const Background = () => (
 const MakeAccount = () => {
     return (
         <div>
-        <p className="Title-text">
-            Mos-<span className="highlighted-text">AI</span>c
-        </p>
-        <div className = "rectangle">
-            <p className = "login-title">회원가입</p>
-            <p className = "text-title">이메일</p>
-            <input className = "email-box" type = 'email'/>
-            <p className = "text-title">비밀번호</p>
-            <input className = "password-box" type = 'password'/>
-            <p className = "text-title">비밀번호 확인</p>
-            <input className = "password-box" type = 'password'/>
+        <div className = "A-rectangle">
+            <p className="A-Title-text">
+                Mos-<span className="A-highlighted-text">AI</span>c
+            </p>
+            <p className = "A-account-title">회원가입</p>
+            <input className = "A-email-box" type = 'email' placeholder = 'name@example.com'/>
+            <input className = "A-password-box" type = 'password' placeholder = 'password'/>
+            <input className = "A-password-box" type = 'password' placeholder = 'password again'/>
             <br/>
-            <Link to="/main" style={{ textDecoration: "none" }} className="login-Button">
+            <label className = "A-checkbox-text">
+                <input className = "A-checkbox" type = "checkbox" value=""/>
+                이메일 수집 및 개인정보 활용에 동의합니다.
+            </label>
+            <Link to="/main" style={{ textDecoration: "none" }} className="A-account-Button">
             가입하기
             </Link>
         </div>

@@ -5,21 +5,21 @@ import './Navigation.css';
 
 const Navigation = () => {
     const navigation = useNavigate();
-    const onClickInvert = () => alert("변환 될 예정")
+    const onClickInvert = () => alert("모델을 불러옵니다")
     return(
         <div>
             <Navbar className="Navbar">
                 <Container>
                     <Navbar.Brand href="/">
                         <p className="NavTitle">
-                            Mos-<span className="highlighted-text">AI</span>c
+                            Mos-<span className="N-highlighted-text">AI</span>c
                         </p>
                     </Navbar.Brand>
                     <Nav>
-                        <button className = "invertButton" onClick = {onClickInvert}>
+                        <button className = "N-invertButton" onClick = {onClickInvert}>
                             Invert
                         </button>
-                        <Nav.Link href = "/mypage" style = {{ textDecoration : "none" }} className="loginButton">
+                        <Nav.Link href = "/mypage" style = {{ textDecoration : "none" }} className="N-myPageButton">
                             My page
                         </Nav.Link>
                     </Nav>

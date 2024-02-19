@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.highlighted-text {
+.N-highlighted-text {
     color: #FE6F61;
 }
 
@@ -22,7 +22,7 @@
     margin-left : -50px;
 }
 
-.invertButton{
+.N-invertButton{
     background-color : #FE6F61;
     color : white;
     font-size : 25px;
@@ -36,7 +36,29 @@
     padding-top : 5px;
 }
 
-.invertButton:hover {
+.N-myPageButton{
+    background-color : #2A2A2A;
+    color : white;
+    font-size : 25px;
+    width : 136px;
+    height : 48px;
+    border-radius : 20px;
+    text-align : center;
+    font-family : 'Kavoon', cursive;
+    margin-left : 9px;
+    margin-right : -50px;
+    Justify-content : center;
+    padding-top : 5px;
+}
+
+/* invertButton hover 효과 */
+.N-invertButton:hover {
     background-color: #FF867B; /* 마우스를 올렸을 때 배경색 변경 */
+    color: black; /* 텍스트 색상 변경 */
+}
+
+/* loginButton hover 효과 */
+.N-myPageButton:hover {
+    background-color: #555; /* 마우스를 올렸을 때 배경색 변경 */
     color: black; /* 텍스트 색상 변경 */
 }

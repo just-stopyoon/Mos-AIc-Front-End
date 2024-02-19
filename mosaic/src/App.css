@@ -12,8 +12,22 @@
   color: white;
 }
 
+.Title{
+  text-Align : center;
+  font-size : 70px;
+  font-family: 'Kavoon', cursive;
+}
+
 .highlighted-text {
   color: #FE6F61; /* 변경하고자 하는 색상을 지정합니다. */
+}
+
+.Text{
+  text-Align : center;
+  font-size : 25px;
+  font-family: 'LINE Seed Sans KR', Bold;
+  margin-top : 50px;
+  margin-bottom : 100px;
 }
 
 .Button{
@@ -34,18 +48,3 @@
 .Button:active{
   box-shadow : inset 10px 10px 10px black;
 }
-
-.Title{
-  text-Align : center;
-  font-size : 70px;
-  font-family: 'Kavoon', cursive;
-}
-
-.Text{
-  text-Align : center;
-  font-size : 25px;
-  font-family: 'LINE Seed Sans KR', Bold;
-  margin-top : 50px;
-  margin-bottom : 100px;
-}
-

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
 
-.background {
+.M-background {
     background-color: #1B1B1B;
     min-height: 100vh;
     display: flex;
@@ -11,45 +11,10 @@
     color: white;
 }
 
-.invertButton{
-    background-color : #FE6F61;
-    color : white;
-    font-size : 25px;
-    width : 136px;
-    height : 48px;
-    border-radius : 20px;
-    text-align : center;
-    font-family: 'Kavoon', cursive;
-    margin-right : 9px;
-    Justify-content : center;
-    padding-top : 5px;
-}
-
-.loginButton{
-    background-color : #2A2A2A;
-    color : white;
-    font-size : 25px;
-    width : 136px;
-    height : 48px;
-    border-radius : 20px;
-    text-align : center;
-    font-family : 'Kavoon', cursive;
-    margin-left : 9px;
-    margin-right : -50px;
-    Justify-content : center;
-    padding-top : 5px;
-}
-
-/* invertButton hover 효과 */
-.invertButton:hover {
-    background-color: #FF867B; /* 마우스를 올렸을 때 배경색 변경 */
-    color: black; /* 텍스트 색상 변경 */
-}
-
-/* loginButton hover 효과 */
-.loginButton:hover {
-    background-color: #555; /* 마우스를 올렸을 때 배경색 변경 */
-    color: black; /* 텍스트 색상 변경 */
+.icon {
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
 }
 
 .upload-box{
@@ -92,21 +57,24 @@
     text-Align : center;
     font-size : 25px;
     font-family: 'LINE Seed Sans KR', Thin;
-    font-weight : 300;
+    font-weight : 320;
     line-height : 15px;
     margin-top : 10px;
     color : white;
 }
 
+.sub-sub-text{
+    text-Align : center;
+    font-size : 15px;
+    font-family: 'LINE Seed Sans KR', Thin;
+    font-weight : 200;
+    line-height : 15px;
+    color : white;
+}
+/* 
 .upload-image{
     width : 126px;
     text-align : center;
-}
-
-.icon {
-    width: 100px;
-    height: 100px;
-    pointer-events: none;
 }
 
 .file {
@@ -139,4 +107,4 @@
 
 .preview:hover {
     border-color: #111;
-}
+} */

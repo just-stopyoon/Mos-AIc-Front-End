@@ -12,11 +12,9 @@ import Mypage from "./routes/Mypage.js";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
-        <Route
-          path="/"
-          element={
+        <Route path="/" element={
             <div>
               <div className="App-header">
                 <p className="Title">
