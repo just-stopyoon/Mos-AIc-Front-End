@@ -8,8 +8,6 @@ import Mainpage from "./routes/Mainpage.js";
 import Account from "./routes/Account.js";
 import Mypage from "./routes/Mypage.js";
 
-
-
 function App() {
   return (
     <div>
