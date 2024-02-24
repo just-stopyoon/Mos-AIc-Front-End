@@ -35,7 +35,7 @@ const FileInfo = ({ uploadedInfo }) => {
 
     return (
         <div className="preview_info">
-            {imageUrl && <img src={imageUrl} alt="Preview" style={{ width: '400px', maxHeight: '400px' }} />}
+            {imageUrl && <img src={imageUrl} alt="Preview" style={{ maxWidth: '600px', maxHeight: '600px' }} />}
         </div>
     );
 };
