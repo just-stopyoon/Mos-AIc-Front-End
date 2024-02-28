@@ -16,12 +16,12 @@ const Navigation = () => {
                         </p>
                     </Navbar.Brand>
                     <Nav>
-                        <button className = "N-invertButton" onClick = {onClickInvert}>
-                            Invert
-                        </button>
-                        <Nav.Link href = "/mypage" style = {{ textDecoration : "none" }} className="N-myPageButton">
-                            My page
+                        <Nav.Link href = "/mypage" style = {{ textDecoration : "none" }} className="N-invertButton">
+                            my page
                         </Nav.Link>
+                        <button className = "N-myPageButton" onClick = {onClickInvert}>
+                            logout
+                        </button>
                     </Nav>
                 </Container>
             </Navbar>

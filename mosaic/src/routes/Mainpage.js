@@ -98,32 +98,46 @@ const UploadBox = () => {
         }
     };
 
+    const handleApi = () => {
+        const formData = new FormData();
+        formData.append('image', uploadedInfo.imageUrl); // Assuming imageUrl contains the image data
+        axios.post('url', formData).then((res) => {
+            console.log(res);
+        });
+    };
+
     return (
-        <label
-            className={`preview${isActive ? ' active' : ''}`}
-            onDragEnter={handleDragStart}
-            onDragOver={handleDragOver}
-            onDragLeave={handleDragEnd}
-            onDrop={handleDrop}
-        >
-            <div className="upload-box">
-                <input
-                    type="file"
-                    name="file"
-                    className="drag-file"
-                    onChange={handleUpload}                    
-                />
-                <FileInfo uploadedInfo={uploadedInfo} />
-                {!uploadedInfo && (
-                    <>
-                        <Logo />
-                        <p className="upload-text">사진 파일을 업로드하거나 클릭</p>
-                        <p className="sub-text">또는 여기에 파일 끌어다놓기</p>
-                        <p className="sub-sub-text">*.jpg 또는 .png 파일만 첨부 가능</p>
-                    </>
-                )}
+        <div>
+            <label
+                className={`preview${isActive ? ' active' : ''}`}
+                onDragEnter={handleDragStart}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragEnd}
+                onDrop={handleDrop}
+            >
+                <div className="upload-box">
+                    <input
+                        type="file"
+                        name="file"
+                        className="drag-file"
+                        onChange={handleUpload}                    
+                    />
+                    <FileInfo uploadedInfo={uploadedInfo} />
+                    {!uploadedInfo && (
+                        <>
+                            <Logo />
+                            <p className="upload-text">사진 파일을 업로드하거나 클릭</p>
+                            <p className="sub-text">또는 여기에 파일 끌어다놓기</p>
+                            <p className="sub-sub-text">*.jpg 또는 .png 파일만 첨부 가능</p>
+                        </>
+                    )}
+                </div>
+            </label>
+            <div className="M-center">
+                <button className="submit-button" onClick={handleApi}>invert</button>
             </div>
-        </label>
+        </div>
+
     );
 }
 
