@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 import './Mainpage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import uploadImage from '../image/uploadImage.png';
 import Navigation from '../components/Navigation';
+
+const uploadURL = "https://port-0-back-end-am952nlsys9dvi.sel5.cloudtype.app/upload";
 
 const Mainpage = () => {
     return (
@@ -30,16 +33,15 @@ const Logo = () => (
 
 const FileInfo = ({ uploadedInfo }) => {
     if (!uploadedInfo) return null;
-
+    
     const { imageUrl } = uploadedInfo;
-
+    
     return (
         <div className="preview_info">
             {imageUrl && <img src={imageUrl} alt="Preview" style={{ maxWidth: '600px', maxHeight: '600px' }} />}
         </div>
     );
 };
-
 
 const UploadBox = () => {
     const [uploadedInfo, setUploadedInfo] = useState(null);
@@ -76,14 +78,25 @@ const UploadBox = () => {
         reader.readAsDataURL(file);
     };
 
-    const handleUpload = ({ target }) => {
-        const file = target.files && target.files[0];
+    const handleUpload = async (event) => {
+        const file = event.target.files && event.target.files[0];
         if (file) {
             setFileInfo(file);
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+                const response = await axios.post(uploadURL, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
+                console.log('File uploaded successfully:', response.data);
+                // 여기서 서버로부터 받은 데이터를 처리할 수 있습니다.
+            } catch (error) {
+                console.error('Error uploading file:', error);
+            }
         }
     };
-    
-    
 
     return (
         <label
@@ -94,7 +107,12 @@ const UploadBox = () => {
             onDrop={handleDrop}
         >
             <div className="upload-box">
-                <input type="file" className="drag-file" onChange={handleUpload} />
+                <input
+                    type="file"
+                    name="file"
+                    className="drag-file"
+                    onChange={handleUpload}                    
+                />
                 <FileInfo uploadedInfo={uploadedInfo} />
                 {!uploadedInfo && (
                     <>
