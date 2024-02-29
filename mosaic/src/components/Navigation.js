@@ -10,7 +10,7 @@ const Navigation = () => {
         <div>
             <Navbar className="Navbar">
                 <Container>
-                    <Navbar.Brand href="/">
+                    <Navbar.Brand href="/main">
                         <p className="NavTitle">
                             Mos-<span className="N-highlighted-text">AI</span>c
                         </p>
