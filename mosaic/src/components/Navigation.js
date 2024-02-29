@@ -19,9 +19,9 @@ const Navigation = () => {
                         <Nav.Link href = "/mypage" style = {{ textDecoration : "none" }} className="N-invertButton">
                             my page
                         </Nav.Link>
-                        <button className = "N-myPageButton" onClick = {onClickInvert}>
+                        <Nav.Link href = "/login" style = {{ textEdcoration : "none" }} className = "N-myPageButton">
                             logout
-                        </button>
+                        </Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

@@ -8,8 +8,10 @@ import uploadImage from '../image/uploadImage.png';
 import Navigation from '../components/Navigation';
 
 const uploadURL = "https://port-0-back-end-am952nlsys9dvi.sel5.cloudtype.app/upload";
+const invertURL = "https://port-0-back-end-am952nlsys9dvi.sel5.cloudtype.app/invert";
 
 const Mainpage = () => {
+    const [invertedImageUrl, setInvertedImageUrl] = useState(null);
     return (
         <div>
             <Navigation />
@@ -31,21 +33,27 @@ const Logo = () => (
     </svg>
 );
 
-const FileInfo = ({ uploadedInfo }) => {
-    if (!uploadedInfo) return null;
-    
-    const { imageUrl } = uploadedInfo;
-    
+const FileInfo = ({ uploadedInfo, invertedImageUrl }) => {
+    if (!uploadedInfo && !invertedImageUrl) return null;
+
     return (
         <div className="preview_info">
-            {imageUrl && <img src={imageUrl} alt="Preview" style={{ maxWidth: '600px', maxHeight: '600px' }} />}
+            {uploadedInfo && !invertedImageUrl && (
+                <img src={uploadedInfo.imageUrl} alt="Preview" style={{ maxWidth: '600px', maxHeight: '600px' }} />
+            )}
+            {invertedImageUrl && (
+                <img src={invertedImageUrl} alt="Inverted Preview" style={{ maxWidth: '600px', maxHeight: '600px' }} />
+            )}
         </div>
     );
 };
 
+
 const UploadBox = () => {
     const [uploadedInfo, setUploadedInfo] = useState(null);
     const [isActive, setActive] = useState(false);
+    const [photoId, setPhotoId] = useState(null);
+    const [invertedImageUrl, setInvertedImageUrl] = useState(null);
 
     const handleDragStart = () => setActive(true);
     const handleDragEnd = () => setActive(false);
@@ -81,7 +89,6 @@ const UploadBox = () => {
     const handleUpload = async (event) => {
         const file = event.target.files && event.target.files[0];
         if (file) {
-            setFileInfo(file);
             try {
                 const formData = new FormData();
                 formData.append('file', file);
@@ -91,20 +98,37 @@ const UploadBox = () => {
                     }
                 });
                 console.log('File uploaded successfully:', response.data);
-                // 여기서 서버로부터 받은 데이터를 처리할 수 있습니다.
+                setPhotoId(response.data.photo_id); // 이미지의 식별자 설정
+                setFileInfo(file); // 미리보기 설정
             } catch (error) {
                 console.error('Error uploading file:', error);
             }
         }
     };
 
+
     const handleApi = () => {
-        const formData = new FormData();
-        formData.append('image', uploadedInfo.imageUrl); // Assuming imageUrl contains the image data
-        axios.post('url', formData).then((res) => {
+        if (!photoId) {
+            alert('이미지를 업로드해주세요.');
+            return;
+        }
+    
+        axios.post(invertURL, { photo_id: photoId }).then((res) => {
             console.log(res);
+            const { detect, imgsrc } = res.data;
+            if (detect) {
+                const fullImageUrl = `https://port-0-back-end-am952nlsys9dvi.sel5.cloudtype.app/${imgsrc}`;
+                setInvertedImageUrl(fullImageUrl); // 반전된 이미지 URL 설정
+            } else {
+                alert('다른 이미지를 선택해주세요.');
+            }
+        }).catch((error) => {
+            console.error('Error inverting image:', error);
         });
     };
+    
+    
+    
 
     return (
         <div>
@@ -122,7 +146,7 @@ const UploadBox = () => {
                         className="drag-file"
                         onChange={handleUpload}                    
                     />
-                    <FileInfo uploadedInfo={uploadedInfo} />
+                    <FileInfo uploadedInfo={uploadedInfo} invertedImageUrl={invertedImageUrl} />
                     {!uploadedInfo && (
                         <>
                             <Logo />
