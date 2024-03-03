@@ -10,17 +10,17 @@ const Navigation = () => {
         <div>
             <Navbar className="Navbar">
                 <Container>
-                    <Navbar.Brand href="/">
+                    <Navbar.Brand href="/main">
                         <p className="NavTitle">
                             Mos-<span className="N-highlighted-text">AI</span>c
                         </p>
                     </Navbar.Brand>
                     <Nav>
-                        <button className = "N-invertButton" onClick = {onClickInvert}>
-                            Invert
-                        </button>
-                        <Nav.Link href = "/mypage" style = {{ textDecoration : "none" }} className="N-myPageButton">
-                            My page
+                        <Nav.Link href = "/mypage" style = {{ textDecoration : "none" }} className="N-invertButton">
+                            my page
+                        </Nav.Link>
+                        <Nav.Link href = "/login" style = {{ textEdcoration : "none" }} className = "N-myPageButton">
+                            logout
                         </Nav.Link>
                     </Nav>
                 </Container>

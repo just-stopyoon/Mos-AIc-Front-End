@@ -86,6 +86,29 @@
     line-height : 15px;
     color : white;
 }
+
+.M-center{
+    text-align : center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button{
+    width : 500px;
+    height : 80px;
+    border-radius : 15px;
+    font-size : 40px;
+    text-Align : center;
+    background-color : #FE6F61;
+    color : white;
+    font-family: 'Kavoon', cursive;
+    Justify-content : center;
+    margin-top : 50px;
+    padding-top : 10px;
+    box-shadow : 7px 7px 7px black;
+}
 /* 
 .upload-image{
     width : 126px;

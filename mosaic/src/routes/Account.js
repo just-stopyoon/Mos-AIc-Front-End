@@ -60,7 +60,7 @@ const MakeAccount = () => {
     }
     try {
       const responseData = await idDuplicateCheck(id);
-      if (responseData.result === "true") {
+      if (responseData.result === true) {
         setIdError("이미 사용중인 아이디입니다.");
         setIsIdAvailable(false);
         return false;
